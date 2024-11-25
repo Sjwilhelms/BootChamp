@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-sjwilhelms-bootchamp-srf4o7lj9tx.ws.codeinstitute-ide.net',
+    'boot-champ-5ba7df6635c3.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
