@@ -2,6 +2,6 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('', 
-        views.HomePage.as_view(), name='home'),
+    path('profile/', views.Profile.as_view(), name='profile'),
+    path('', views.PostList.as_view(), name='home'),
 ]
