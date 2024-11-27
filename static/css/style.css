@@ -1,3 +1,52 @@
-* {
-    color: red;
+/* fonts */
+
+/* colour palette */
+
+:root {
+    --night: #0e1113;
+    --white: #feffff;
+    --sandy: #ffb470;
+    --tangelo: #ff4500;
+    --copper: #b37f50;
 }
+
+.night{
+    color: var(--night);
+}
+.white{
+    color: var(--white);
+}
+.sandy{
+    color: var(--sandy);
+}
+.tangelo{
+    color: var(--tangelo);
+}
+.copper{
+    color: var(--copper);
+}
+
+/* general styles */
+
+*{
+    background: var(--night);
+    color: var(--tangelo);
+}
+
+.hide{
+    display: none;
+}
+/* navbar styles */
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text{
+    color: var(--tangelo);
+}
+/* styling posts in list view */
+
+.card{
+    border-color: white;
+}
+/* styling posts in detail view */
+
+/* styling profile in detail view */

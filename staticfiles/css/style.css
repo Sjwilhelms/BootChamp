@@ -1,3 +1,27 @@
-h1 {
-    color: red;
+/* fonts */
+
+/* colour palette */
+
+:root {
+    --night: #0e1113;
+    --white: #feffff;
+    --sandy-brown: #ffb470;
+    --tangelo: #ff4500;
+    --copper: #b37f50;
 }
+
+/* general styles */
+
+*{
+    background: var(--night)!important;
+    color: var(--tangelo);
+}
+
+.hide{
+    display: none;
+}
+/* styling posts in list view */
+
+/* styling posts in detail view */
+
+/* styling profile in detail view */
