@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from forum.views import ProfileList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('profile/', include("forum.urls"), name="profile-urls"),
+    path('profile/', ProfileList.as_view(), name="profile-urls"),
     path('', include('forum.urls'), name='home'),
 ]

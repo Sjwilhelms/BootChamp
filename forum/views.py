@@ -9,5 +9,5 @@ class PostList(generic.ListView):
     """
     model = Post
 
-class Profile(generic.ListView):
+class ProfileList(generic.ListView):
     model = Profile
