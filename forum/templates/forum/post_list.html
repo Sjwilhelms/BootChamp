@@ -14,8 +14,8 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <h6>{{post.author}}</h6>
+          <a href="{% url 'post_detail' post.slug %}"><h5 class="card-title">{{post.title}}</h5></a>
+          <a href=""><h6>{{post.author}}</h6></a>
           <p class="card-text">{{post.excerpt}}</p>
           <p class="card-text"><small>{{post.created_on}}</small></p>
         </div>

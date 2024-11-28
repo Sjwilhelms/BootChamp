@@ -1,4 +1,5 @@
 {% load static %}
+{% url 'home' as home_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -19,7 +20,7 @@
         <!-- navbar element for base template-->
         <nav class="navbar fixed-top navbar-expand-lg night">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">BOOTCHAMP!</a>
+                <a class="navbar-brand" href="{% url 'home' %}">BOOTCHAMP!</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span><i class="fa-solid fa-bars"></i></span>
@@ -29,7 +30,7 @@
                         <li class="nav-item">
                             <button type="button" class="btn btn-outline-danger">Create a post</button>
                         </li>
-                        <li class="nav-item hide">
+                        <li class="nav-item">
                             <button type="button" class="btn btn-outline-danger">Register/Login!</button>
                         </li>
                     </ul>
@@ -37,9 +38,7 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-danger" type="submit">Search</button>
                     </form>
-                    <span class="navbar-text">
-                        <a class="navbar-brand" href="#">Register/Login!</a>
-                    </span>
+                
                 </div>
             </div>
         </nav>
