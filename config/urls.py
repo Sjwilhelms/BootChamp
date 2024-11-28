@@ -20,6 +20,7 @@ from forum.views import ProfileList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include("allauth.urls")),
     path('profile/', ProfileList.as_view(), name="profile-urls"),
     path('', include('forum.urls'), name='home'),
 ]
