@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.models import User
-
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from .forms import PostForm, CommentForm, ProfileForm
@@ -18,7 +16,7 @@ class PostList(generic.ListView):
 
 def post_detail(request, slug):
     """
-    Display an individual :model:'blog.post'.
+    Display an individual :model:'forum.post'.
 
     **Context**
 
