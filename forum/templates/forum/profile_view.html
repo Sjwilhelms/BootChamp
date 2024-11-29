@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% load static %}
+
+
+<div class="card my-3">
+    <div class="row g-0">
+        
+        <div class="col-md-8">
+            <div class="card-body">
+                
+                    <h5 class="card-title">{{profile.user}}</h5>
+
+                <p class="card-text">{{profile.tagline}}</p>
+                <p class="card-text">{{profile.bio}}</p>
+                <p class="card-text"><small>{{profile.created_on}}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

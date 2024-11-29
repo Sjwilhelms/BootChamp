@@ -1,6 +1,9 @@
 from django.db import models
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 
@@ -75,6 +78,11 @@ class Profile(models.Model):
     bio = models.TextField(blank=True, null=True)
     profile_picture = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
 
     def __str__(self):
         return self.user.username

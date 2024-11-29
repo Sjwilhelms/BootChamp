@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
+
 from django.views import generic
 from django.contrib import messages
+from django.contrib.auth.models import User
+
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from .forms import PostForm, CommentForm, ProfileForm
@@ -114,5 +117,7 @@ def comment_delete(request, slug, comment_id):
 
 # views pertaining to profile
 
-class ProfileList(generic.ListView):
-    model = Profile
+def profile_view(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = user.profile  # Using the related_name='profile'
+    return render(request, 'forum/profile_view.html', {'profile': profile})

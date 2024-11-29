@@ -20,7 +20,7 @@
                 <a href="{% url 'post_detail' post.slug %}">
                     <h5 class="card-title">{{post.title}}</h5>
                 </a>
-                <a href="">
+                <a href="{% url 'profile' username=post.author.username %}">
                     <h6>{{post.author}}</h6>
                 </a>
                 <p class="card-text">{{post.excerpt}}</p>
