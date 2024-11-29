@@ -1,4 +1,5 @@
 {% load static %}
+
 {% load crispy_forms_tags %}
 {% url 'home' as home_url %}
 {% url 'account_login' as login_url %}
@@ -139,6 +140,10 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/3aba62bbf9.js" crossorigin="anonymous"></script>
+
+    {% block extras %}
+    {% endblock %}
+
 </body>
 
 </html>
