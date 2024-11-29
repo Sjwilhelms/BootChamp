@@ -120,4 +120,14 @@ def comment_delete(request, slug, comment_id):
 def profile_view(request, username):
     user = get_object_or_404(User, username=username)
     profile = user.profile  # Using the related_name='profile'
-    return render(request, 'forum/profile_view.html', {'profile': profile})
+    posts = Post.objects.filter(author=user).order_by('-created_on')  # Latest posts first
+    comments = Comment.objects.filter(author=user).order_by('-created_on')  # Latest comments first
+    return render(
+        request, 
+        'forum/profile_view.html', 
+        {'profile': profile,
+        'posts': posts,
+        'comments': comments,}
+        )
+
+
