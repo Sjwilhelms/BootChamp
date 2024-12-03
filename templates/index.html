@@ -24,7 +24,7 @@
 <body>
     <header>
         <!-- navbar element for base template-->
-        <nav class="navbar fixed-top navbar-expand-lg night">
+        <nav class="navbar fixed-top navbar-expand-lg night bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">BOOTCHAMP!</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -77,7 +77,7 @@
 
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row bg-warning">
                 <div class="col-12 my-5">
                     <!-- main content from forum/templates/forum/ -->
                     {% block content %}
@@ -93,7 +93,7 @@
     </main>
     <footer>
         <!-- footer content from the base template -->
-        <nav class="navbar fixed-bottom night">
+        <nav class="navbar fixed-bottom night bg-warning">
             <div class="container-fluid">
 
                 <div class="row">

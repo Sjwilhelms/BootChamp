@@ -119,7 +119,7 @@ def create_post_view(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
+            post = form.save(commit=False) 
             post.author = request.user
             
             # Handle Cloudinary image upload
