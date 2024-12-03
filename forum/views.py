@@ -151,3 +151,23 @@ def profile_view(request, username):
         )
 
 
+# views pertaining to create custom profile
+
+def create_profile_view(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.author = request.user
+            
+            # Handle Cloudinary image upload
+            if form.cleaned_data.get('featured_image'):
+                # Upload image to Cloudinary
+                upload_result = upload(form.cleaned_data['featured_image'])
+                post.featured_image = upload_result['secure_url']
+            
+            profile.save()
+            return redirect('profile_view')
+    else:
+        form = ProfileForm()
+    return render(request, 'forum/create_profile.html', {'form': form})
