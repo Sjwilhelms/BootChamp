@@ -2,6 +2,7 @@ from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 
 
@@ -33,6 +34,20 @@ class Post(models.Model):
     
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+
+    def save(self, *args, **kwargs):
+        # Automatically generate slug if not provided
+        if not self.slug:
+            self.slug = slugify(self.title)
+        
+        # Ensure slug uniqueness
+        original_slug = self.slug
+        counter = 1
+        while Post.objects.filter(slug=self.slug).exists():
+            self.slug = f"{original_slug}-{counter}"
+            counter += 1
+        
+        super().save(*args, **kwargs)
 
 class Comment(models.Model):
     """

@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
+from cloudinary.uploader import upload
 from .forms import PostForm, CommentForm, ProfileForm
 from .models import Post, Comment, Profile, Like
 
@@ -112,7 +113,28 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, "You can only delete your own comments!")
     return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
+# views pertaining to creating a post
 
+def create_post_view(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            
+            # Handle Cloudinary image upload
+            if form.cleaned_data.get('featured_image'):
+                # Upload image to Cloudinary
+                upload_result = upload(form.cleaned_data['featured_image'])
+                post.featured_image = upload_result['secure_url']
+            
+            post.save()
+            return redirect('post_list')
+    else:
+        form = PostForm()
+    return render(request, 'forum/create_post.html', {'form': form})
+
+    
 # views pertaining to profile
 
 def profile_view(request, username):
