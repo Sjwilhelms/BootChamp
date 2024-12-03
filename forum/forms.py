@@ -1,6 +1,6 @@
 from .models import Post, Comment, Profile
-
 from django import forms
+# form for user submitted new posts
 class PostForm(forms.ModelForm):
     # Add a file input field for the image
     featured_image = forms.ImageField(
@@ -22,11 +22,13 @@ class PostForm(forms.ModelForm):
             return image
         return None
 
+# form to comment on posts
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ("body", )
 
+# form to update profile
 class ProfileForm(forms.ModelForm):
     featured_image = forms.ImageField(
         required=False,  # Make the image optional

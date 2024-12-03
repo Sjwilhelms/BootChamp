@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -119,19 +119,24 @@ def create_post_view(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False) 
+            post = form.save(commit=False)
             post.author = request.user
-            
+
             # Handle Cloudinary image upload
-            if form.cleaned_data.get('featured_image'):
-                # Upload image to Cloudinary
-                upload_result = upload(form.cleaned_data['featured_image'])
-                post.featured_image = upload_result['secure_url']
+            if 'featured_image' in request.FILES:
+                try:
+                    upload_result = upload(request.FILES['featured_image'])
+                    post.featured_image = upload_result['secure_url']
+                except Error as e:
+                    messages.error(request, f"Image upload failed: {str(e)}")
+                    return render(request, 'forum/create_post.html', {'form': form})
             
             post.save()
-            return redirect('post_list')
+            messages.success(request, "Post created successfully!")
+            return redirect('home')
     else:
         form = PostForm()
+
     return render(request, 'forum/create_post.html', {'form': form})
 
     
@@ -139,9 +144,9 @@ def create_post_view(request):
 
 def profile_view(request, username):
     user = get_object_or_404(User, username=username)
-    profile = user.profile  # Using the related_name='profile'
-    posts = Post.objects.filter(author=user).order_by('-created_on')  # Latest posts first
-    comments = Comment.objects.filter(author=user).order_by('-created_on')  # Latest comments first
+    profile = user.profile 
+    posts = Post.objects.filter(author=user).order_by('-created_on')
+    comments = Comment.objects.filter(author=user).order_by('-created_on') 
     return render(
         request, 
         'forum/profile_view.html', 
