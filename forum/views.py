@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
+from django.urls import reverse
 from cloudinary.uploader import upload
 from .forms import PostForm, CommentForm, ProfileForm
 from .models import Post, Comment, Profile, Like
@@ -111,7 +112,7 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.SUCCESS, "Comment deleted!")
     else:
         messages.add_message(request, messages.ERROR, "You can only delete your own comments!")
-    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+    return HttpResponseRedirect(reverse("post_detail", kwargs={"slug":slug}))
 
 # views pertaining to creating a post
 
@@ -139,7 +140,23 @@ def create_post_view(request):
 
     return render(request, 'forum/create_post.html', {'form': form})
 
-    
+def edit_post_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    # Optional: Ensure only the post owner can edit
+    if request.user != post.author:
+        return redirect('home')  # Redirect unauthorized users to a safe page
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)  # Pass the post instance
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail', slug=post.slug)  # Redirect to the post's detail page
+    else:
+        form = PostForm(instance=post)  # Prepopulate the form with the post's data
+
+    return render(request, 'forum/edit_post.html', {'form': form, 'post': post})
+
 # views pertaining to profile
 
 def profile_view(request, username):
@@ -155,24 +172,15 @@ def profile_view(request, username):
         'comments': comments,}
         )
 
-
 # views pertaining to create custom profile
 
-def create_profile_view(request):
+def edit_profile_view(request):
+    profile = request.user.profile  # Get the logged-in user's profile
     if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
-            profile = form.save(commit=False)
-            profile.author = request.user
-            
-            # Handle Cloudinary image upload
-            if form.cleaned_data.get('featured_image'):
-                # Upload image to Cloudinary
-                upload_result = upload(form.cleaned_data['featured_image'])
-                post.featured_image = upload_result['secure_url']
-            
-            profile.save()
-            return redirect('profile_view')
+            form.save()
+            return redirect('profile', username=request.user.username) 
     else:
-        form = ProfileForm()
-    return render(request, 'forum/create_profile.html', {'form': form})
+        form = ProfileForm(instance=profile)
+    return render(request, 'forum/edit_profile.html', {'form': form})

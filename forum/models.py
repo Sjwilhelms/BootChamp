@@ -24,7 +24,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    excerpt = models.TextField(blank=True)
+    excerpt = models.CharField(max_length=400, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=True)
     
@@ -61,7 +61,7 @@ class Comment(models.Model):
     )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
     
 
     class Meta:
@@ -89,7 +89,7 @@ class Profile(models.Model):
     Stores a single profile entry related to :model:`auth.User`
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    tagline = models.CharField(max_length=200, unique=True)
+    tagline = models.CharField(max_length=200)
     bio = models.TextField(blank=True, null=True)
     profile_picture = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)

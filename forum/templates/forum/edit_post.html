@@ -3,16 +3,14 @@
 {% load static %}
 
 {% block content %}
-
-
 <div class="container my-5">
-    <h2>Create a New Profile</h2>
+    <h2>Edit Post: {{ post.title }}</h2>
     <form method="post" enctype="multipart/form-data">
         
         {{ form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
     </form>
+    <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-secondary">Cancel</a>
 </div>
-
-{% endblock content%}
+{% endblock %}
