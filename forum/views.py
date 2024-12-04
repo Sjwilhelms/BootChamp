@@ -172,7 +172,19 @@ def profile_view(request, username):
         'comments': comments,}
         )
 
-# views pertaining to create custom profile
+# view to create custom profile
+
+def create_profile_view(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', username=request.user.username) 
+    else:
+        form = ProfileForm(instance=profile)
+    return render(request, 'forum/create_profile.html', {'form': form})
+
+# view to edit custom profile
 
 def edit_profile_view(request):
     profile = request.user.profile  # Get the logged-in user's profile
