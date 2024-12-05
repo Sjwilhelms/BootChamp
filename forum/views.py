@@ -5,6 +5,12 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from django.urls import reverse
+from PIL import Image
+from cloudinary.uploader import upload
+from cloudinary.exceptions import Error
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from cloudinary.uploader import upload
 from .forms import PostForm, CommentForm, ProfileForm
 from .models import Post, Comment, Profile, Like
@@ -123,18 +129,41 @@ def create_post_view(request):
             post = form.save(commit=False)
             post.author = request.user
 
-            # Handle Cloudinary image upload
             if 'featured_image' in request.FILES:
+                image_file = request.FILES['featured_image']
+                
                 try:
-                    upload_result = upload(request.FILES['featured_image'])
+                    # Open the image using Pillow
+                    img = Image.open(image_file)
+                    
+                    # Optional: Resize the image if it's larger than 2000x2000
+                    max_size = (2000, 2000)
+                    if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
+                        img.thumbnail(max_size)
+
+                        # Save the resized image to an in-memory file
+                        buffer = BytesIO()
+                        img.save(buffer, format=img.format)
+                        buffer.seek(0)
+                        
+                        # Replace the uploaded file with the resized one
+                        image_file = InMemoryUploadedFile(
+                            buffer, None, image_file.name, image_file.content_type, buffer.getbuffer().nbytes, None
+                        )
+
+                    # Upload the image to Cloudinary
+                    upload_result = upload(image_file)
                     post.featured_image = upload_result['secure_url']
-                except Error as e:
-                    messages.error(request, f"Image upload failed: {str(e)}")
+
+                except Exception as e:
+                    messages.error(request, f"Image processing/upload failed: {str(e)}")
                     return render(request, 'forum/create_post.html', {'form': form})
-            
+
             post.save()
             messages.success(request, "Post created successfully!")
             return redirect('home')
+        else:
+            messages.error(request, "There was an error in your form submission.")
     else:
         form = PostForm()
 
@@ -143,17 +172,53 @@ def create_post_view(request):
 def edit_post_view(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
-    # Optional: Ensure only the post owner can edit
+    # Ensure only the post owner can edit
     if request.user != post.author:
-        return redirect('home')  # Redirect unauthorized users to a safe page
+        messages.error(request, "You are not authorized to edit this post.")
+        return redirect('home')
 
     if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES, instance=post)  # Pass the post instance
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
-            form.save()
-            return redirect('post_detail', slug=post.slug)  # Redirect to the post's detail page
+            post = form.save(commit=False)
+
+            if 'featured_image' in request.FILES:
+                image_file = request.FILES['featured_image']
+
+                try:
+                    # Open the image using Pillow
+                    img = Image.open(image_file)
+
+                    # Optional: Resize the image if it's larger than 2000x2000
+                    max_size = (2000, 2000)
+                    if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
+                        img.thumbnail(max_size)
+
+                        # Save the resized image to an in-memory file
+                        buffer = BytesIO()
+                        img.save(buffer, format=img.format)
+                        buffer.seek(0)
+
+                        # Replace the uploaded file with the resized one
+                        image_file = InMemoryUploadedFile(
+                            buffer, None, image_file.name, image_file.content_type, buffer.getbuffer().nbytes, None
+                        )
+
+                    # Upload the new image to Cloudinary
+                    upload_result = upload(image_file)
+                    post.featured_image = upload_result['secure_url']
+
+                except Exception as e:
+                    messages.error(request, f"Image processing/upload failed: {str(e)}")
+                    return render(request, 'forum/edit_post.html', {'form': form, 'post': post})
+
+            post.save()
+            messages.success(request, "Post updated successfully!")
+            return redirect('post_detail', slug=post.slug)
+        else:
+            messages.error(request, "There was an error in your form submission.")
     else:
-        form = PostForm(instance=post)  # Prepopulate the form with the post's data
+        form = PostForm(instance=post)
 
     return render(request, 'forum/edit_post.html', {'form': form, 'post': post})
 
