@@ -175,6 +175,7 @@ def profile_view(request, username):
 # view to create custom profile
 
 def create_profile_view(request):
+    profile = request.user.get_or_create_profile()
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
@@ -186,8 +187,12 @@ def create_profile_view(request):
 
 # view to edit custom profile
 
+
+
+
 def edit_profile_view(request):
-    profile = request.user.profile  # Get the logged-in user's profile
+    profile = request.user.get_or_create_profile()
+    
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():

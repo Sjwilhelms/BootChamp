@@ -101,3 +101,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+def get_or_create_profile(user):
+    profile, created = Profile.objects.get_or_create(user=user)
+    return profile
+
+User.add_to_class('get_or_create_profile', get_or_create_profile)
