@@ -222,6 +222,24 @@ def edit_post_view(request, slug):
 
     return render(request, 'forum/edit_post.html', {'form': form, 'post': post})
 
+
+
+def delete_post_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    # Ensure only the post owner can delete
+    if request.user != post.author:
+        messages.error(request, "You are not authorized to delete this post.")
+        return redirect('home')
+
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, "Post deleted successfully!")
+        return redirect('home')
+
+    # If the view is accessed in a non-POST way, redirect safely
+    return redirect('home')
+
 # views pertaining to profile
 
 def profile_view(request, username):
@@ -251,9 +269,6 @@ def create_profile_view(request):
     return render(request, 'forum/create_profile.html', {'form': form})
 
 # view to edit custom profile
-
-
-
 
 def edit_profile_view(request):
     profile = request.user.get_or_create_profile()
