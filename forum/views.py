@@ -125,7 +125,7 @@ def comment_delete(request, slug, comment_id):
 def create_post_view(request):
     if request.method == 'POST':
         # Pass request.FILES to the form constructor
-        form = PostForm(request.POST, request.FILES, instance=post)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             # Create the post instance but don't save to DB yet
             post = form.save(commit=False)
@@ -141,7 +141,7 @@ def create_post_view(request):
             messages.error(request, "There was an error in your form submission.")
     else:
         # For GET request, create an empty form
-        form = PostForm(instance=post)
+        form = PostForm()
 
     return render(request, 'forum/create_post.html', {'form': form})
 
