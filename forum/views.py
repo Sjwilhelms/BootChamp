@@ -124,120 +124,76 @@ def comment_delete(request, slug, comment_id):
 
 def create_post_view(request):
     if request.method == 'POST':
+        # Pass request.FILES to the form constructor
         form = PostForm(request.POST, request.FILES)
+        
         if form.is_valid():
+            # Create the post instance but don't save to DB yet
             post = form.save(commit=False)
+            
+            # Set the author to the current logged-in user
             post.author = request.user
-
-            if 'featured_image' in request.FILES:
-                image_file = request.FILES['featured_image']
-                
-                try:
-                    # Open the image using Pillow
-                    img = Image.open(image_file)
-                    
-                    # Optional: Resize the image if it's larger than 2000x2000
-                    max_size = (2000, 2000)
-                    if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
-                        img.thumbnail(max_size)
-
-                        # Save the resized image to an in-memory file
-                        buffer = BytesIO()
-                        img.save(buffer, format=img.format)
-                        buffer.seek(0)
-                        
-                        # Replace the uploaded file with the resized one
-                        image_file = InMemoryUploadedFile(
-                            buffer, None, image_file.name, image_file.content_type, buffer.getbuffer().nbytes, None
-                        )
-
-                    # Upload the image to Cloudinary
-                    upload_result = upload(image_file)
-                    post.featured_image = upload_result['secure_url']
-
-                except Exception as e:
-                    messages.error(request, f"Image processing/upload failed: {str(e)}")
-                    return render(request, 'forum/create_post.html', {'form': form})
-
+            
+            # Save the post with the image
             post.save()
+            
             messages.success(request, "Post created successfully!")
             return redirect('home')
         else:
+            # If the form is not valid, print errors for debugging
+            print(form.errors)
             messages.error(request, "There was an error in your form submission.")
     else:
+        # For GET request, create an empty form
         form = PostForm()
 
     return render(request, 'forum/create_post.html', {'form': form})
 
+
 def edit_post_view(request, slug):
+    # Get the post or return 404
     post = get_object_or_404(Post, slug=slug)
 
     # Ensure only the post owner can edit
     if request.user != post.author:
-        messages.error(request, "You are not authorized to edit this post.")
-        return redirect('home')
+        raise PermissionDenied("You are not authorized to edit this post.")
 
     if request.method == 'POST':
+        # Pass both POST data and FILES, and use the existing post instance
         form = PostForm(request.POST, request.FILES, instance=post)
+        
         if form.is_valid():
-            post = form.save(commit=False)
-
-            if 'featured_image' in request.FILES:
-                image_file = request.FILES['featured_image']
-
-                try:
-                    # Open the image using Pillow
-                    img = Image.open(image_file)
-
-                    # Optional: Resize the image if it's larger than 2000x2000
-                    max_size = (2000, 2000)
-                    if img.size[0] > max_size[0] or img.size[1] > max_size[1]:
-                        img.thumbnail(max_size)
-
-                        # Save the resized image to an in-memory file
-                        buffer = BytesIO()
-                        img.save(buffer, format=img.format)
-                        buffer.seek(0)
-
-                        # Replace the uploaded file with the resized one
-                        image_file = InMemoryUploadedFile(
-                            buffer, None, image_file.name, image_file.content_type, buffer.getbuffer().nbytes, None
-                        )
-
-                    # Upload the new image to Cloudinary
-                    upload_result = upload(image_file)
-                    post.featured_image = upload_result['secure_url']
-
-                except Exception as e:
-                    messages.error(request, f"Image processing/upload failed: {str(e)}")
-                    return render(request, 'forum/edit_post.html', {'form': form, 'post': post})
-
-            post.save()
+            # Save the form with the updated data
+            post = form.save()
+            
             messages.success(request, "Post updated successfully!")
             return redirect('post_detail', slug=post.slug)
         else:
+            # If form is invalid, show error messages
             messages.error(request, "There was an error in your form submission.")
+            print(form.errors)  # Optional: print errors for debugging
     else:
+        # For GET request, populate form with existing post data
         form = PostForm(instance=post)
 
-    return render(request, 'forum/edit_post.html', {'form': form, 'post': post})
+    return render(request, 'forum/edit_post.html', {
+        'form': form, 
+        'post': post
+    })
 
 
 
 def delete_post_view(request, slug):
+    # Get the post or return 404
     post = get_object_or_404(Post, slug=slug)
 
     # Ensure only the post owner can delete
     if request.user != post.author:
-        messages.error(request, "You are not authorized to delete this post.")
-        return redirect('home')
+        raise PermissionDenied("You are not authorized to delete this post.")
 
-    if request.method == 'POST':
-        post.delete()
-        messages.success(request, "Post deleted successfully!")
-        return redirect('home')
-
-    # If the view is accessed in a non-POST way, redirect safely
+    # Delete the post
+    post.delete()
+    messages.success(request, "Post deleted successfully!")
     return redirect('home')
 
 # views pertaining to profile
