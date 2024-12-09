@@ -6,7 +6,15 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 
 ### TABLE OF CONTENTS
 
-1. [TECH STACK](#tech-stack)
+1. [PLANNING]()
+    2. [TECH STACK](#tech-stack)
+    3. [MUST-HAVE USER STORIES](#must-have-user-stories)
+    4. [SHOULD-HAVE USER STORIES]()
+    5. [COULD-HAVE USER STORIES]()
+2. [DEPLOYMENT](#deployment)
+3. [TESTING]()
+4. [CREDITS]()
+5. [CREDITS AND ACKNOWLEDGEMENT]()
 
 ### TECH STACK  
 
