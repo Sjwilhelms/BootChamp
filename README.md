@@ -1,14 +1,14 @@
 # BOOTCHAMP  
 
-### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
+###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
 BOOTCHAMP is a forum for jr software developers to share inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a two week sprint to deliver the MVP.
 
-## TECH STACK  
+### TECH STACK  
 
 HTML, CSS, JS, PYTHON, DJANGO, CLOUDINARY, HEROKU, NEONDB  
 
-## MUST HAVE USER STORIES
+### MUST HAVE USER STORIES
 
 1. as a site user I can view a list of posts so that I can survey the sites content at a glance
 1. as a site user I can view each post in detail so that I can engage with the content
@@ -17,4 +17,6 @@ HTML, CSS, JS, PYTHON, DJANGO, CLOUDINARY, HEROKU, NEONDB
 1. as a signed in site user I can create, edit, and/or delete a post so that I can contribute to the forum
 1. as a signed in site user I can comment on a post and edit/delete said comment so that I can interact with other users
 1. as a signed in site user I can update my profile biography
-1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently
+1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
+
+### DEPLOYMENT
