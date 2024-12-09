@@ -8,13 +8,13 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 
 1. [PLANNING]()
     2. 
-    [TECH STACK](#tech-stack)
+[TECH STACK](#tech-stack)
     3. 
-    [MUST-HAVE USER STORIES](#must-have-user-stories)
+[MUST-HAVE USER STORIES](#must-have-user-stories)
     4. 
-    [SHOULD-HAVE USER STORIES]()
+[SHOULD-HAVE USER STORIES]()
     5. 
-    [COULD-HAVE USER STORIES]()
+[COULD-HAVE USER STORIES]()
 2. [DEPLOYMENT](#deployment)
 3. [TESTING]()
 4. [CREDITS]()
