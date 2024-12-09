@@ -2,9 +2,13 @@
 
 ###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
-BOOTCHAMP is a forum for jr software developers to share inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a two week sprint to deliver the MVP.
+BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a two week sprint to deliver the MVP.
 
-## TECH STACK  
+### TABLE OF CONTENTS
+
+1. (TECH STACK)[#TECH-STACK]
+
+### TECH STACK  
 
 ### LANGUAGES
 
