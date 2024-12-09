@@ -3,17 +3,9 @@ from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.views.generic import TemplateView
 from django.urls import reverse
-from PIL import Image
-from cloudinary.uploader import upload
-from cloudinary.exceptions import Error
-from PIL import Image
-from io import BytesIO
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from cloudinary.uploader import upload
 from .forms import PostForm, CommentForm, ProfileForm
-from .models import Post, Comment, Profile, Like
+from .models import Post, Comment 
 
 # Models for viewing all posts on the home page and for viewing each post on it's own page
 class PostList(generic.ListView):
@@ -215,6 +207,7 @@ def create_profile_view(request):
         form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
+            messages.success(request, "Profile updated successfully!")
             return redirect('profile', username=request.user.username) 
     else:
         form = ProfileForm(instance=profile)
@@ -229,6 +222,7 @@ def edit_profile_view(request):
         form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
+            messages.success(request, "Profile updated successfully!")
             return redirect('profile', username=request.user.username) 
     else:
         form = ProfileForm(instance=profile)
