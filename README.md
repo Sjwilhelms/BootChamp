@@ -4,9 +4,31 @@
 
 BOOTCHAMP is a forum for jr software developers to share inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a two week sprint to deliver the MVP.
 
-### TECH STACK  
+## TECH STACK  
 
-HTML, CSS, JS, PYTHON, DJANGO, CLOUDINARY, HEROKU, NEONDB  
+### LANGUAGES
+
+- HTML 
+- CSS 
+- JS 
+- PYTHON 
+
+### SERVICES
+
+- HEROKU 
+- NEONDB  
+- CLOUDINARY 
+ 
+### FRAMEWORKS
+
+- DJANGO 
+- DJANGO CRISPY FORMS 
+- WHITENOISE 
+
+### TOOLS
+
+- GITHUB PROJECTS
+- BALSAMIQ
 
 ### MUST HAVE USER STORIES
 
