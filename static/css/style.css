@@ -1,6 +1,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-*{
+/* general style */
+
+main{
     font-family: "Open Sans", sans-serif;
 }
+
+.navbar {
+    background-color: #ffffff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.navbar {
+    background-color: #f8f9fa; 
+}
+
+
+.navbar .navbar-nav .nav-link {
+    color: #333; 
+}
+
+.navbar .navbar-brand {
+    color: #000; 
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.container .post-list-item:hover {
+    box-shadow: 2px 2px 2px #0E111380;    
+    transform: scale(.95);
+}
+

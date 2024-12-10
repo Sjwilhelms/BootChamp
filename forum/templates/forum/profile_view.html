@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                    <h5 class="card-title">{{profile.user}}</h5>
+                <h5 class="card-title text-center p-3">{{profile.user}}</h5>
                 <p class="card-text">{{profile.tagline}}</p>
                 <p class="card-text">{{profile.bio}}</p>
                 <p class="card-text"><small>{{profile.created_on}}</small></p>
@@ -22,30 +22,43 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="card col-12 col-md-6 p-3 mx-auto">
+            <h2 class="text-center">Post History</h2>
+            <ul>
+                {% for post in posts %}
+                <li>
+                    <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                    <p>Published on: {{ post.created_on|date:"F j, Y, g:i a" }}</p>
+                </li>
+                {% empty %}
+                <p>No posts yet.</p>
+                {% endfor %}
+            </ul>
+        </div>
+    
+    
+        <div class="card col-12 col-md-6 p-3 mx-auto">
+            <h2 class="text-center">Comment History</h2>
+            <ul>
+                {% for comment in comments %}
+                <li>
+                    <p>Commented on <a href="{% url 'post_detail' comment.post.slug %}">{{ comment.post.title }}</a>:
+                    </p>
+                    <blockquote>{{ comment.content }}</blockquote>
+                    <p>On: {{ comment.created_on|date:"F j, Y, g:i a" }}</p>
+                </li>
+                {% empty %}
+                <p>No comments yet.</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
-<h2>Post History</h2>
-<ul>
-    {% for post in posts %}
-    <li>
-        <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
-        <p>Published on: {{ post.created_on|date:"F j, Y, g:i a" }}</p>
-    </li>
-    {% empty %}
-    <p>No posts yet.</p>
-    {% endfor %}
-</ul>
+</div>
 
-<h2>Comment History</h2>
-<ul>
-    {% for comment in comments %}
-    <li>
-        <p>Commented on <a href="{% url 'post_detail' comment.post.slug %}">{{ comment.post.title }}</a>:</p>
-        <blockquote>{{ comment.content }}</blockquote>
-        <p>On: {{ comment.created_on|date:"F j, Y, g:i a" }}</p>
-    </li>
-    {% empty %}
-    <p>No comments yet.</p>
-    {% endfor %}
-</ul>
+
+
 
 {% endblock content %}
