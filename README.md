@@ -15,6 +15,8 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 1. [TECHNOLOGY](#tech-stack)
 2. [DEPLOYMENT](#deployment)
 3. [TESTING]()
+
+
 4. [REFERENCES]()
 5. []()
 
@@ -55,4 +57,14 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 1. as a signed in site user I can update my profile biography
 1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
 
+[Project board](https://github.com/users/Sjwilhelms/projects/6)
+
 ### DEPLOYMENT
+
+### TESTING
+
+https://pagespeed.web.dev/analysis/https-boot-champ-5ba7df6635c3-herokuapp-com/4mjp8pzpjy?form_factor=mobile
+
+[Mobile performance](static/images/readme/mobile%20performance.png)  
+
+[Desktop performance](static/images/readme/desktop%20performance.png)  
