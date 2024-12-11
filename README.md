@@ -37,8 +37,11 @@ Said MVP is a web application where users can share experiences starting out in 
 - BALSAMIQ - tool for creating wireframes
 - LUCIDCHART - tool for creating entity relationship diagrams
   
-
 ### DESIGN  
+
+The user stories establish the CRUD functionality of the website. Posts, Comments, and Profiles each have a data model that relates to a built in User model. 
+
+![ERD document](static/images/readme/erd.png/)
 
 ###### MUST HAVE USER STORIES  
   
