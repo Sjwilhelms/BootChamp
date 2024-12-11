@@ -4,8 +4,6 @@
 
 BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope and deliver the MVP.
 
-### TABLE OF CONTENTS
-
 <!-- 1. [USER STORIES]()  
     2. [MUST-HAVE USER STORIES](#must-have-user-stories)
     4. [SHOULD-HAVE USER STORIES]()
@@ -15,38 +13,36 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 1. [TECHNOLOGY](#tech-stack)
 2. [DEPLOYMENT](#deployment)
 3. [TESTING]()
-
-
 4. [REFERENCES]()
 5. []() -->
 
 ##### TECH STACK  
 
-###### LANGUAGES
+##### LANGUAGES
 
 - HTML 
 - CSS 
 - JS 
 - PYTHON 
 
-### SERVICES
+##### SERVICES
 
 - HEROKU 
 - NEONDB  
 - CLOUDINARY 
  
-### FRAMEWORKS
+##### FRAMEWORKS
 
 - DJANGO 
 - DJANGO CRISPY FORMS 
 - WHITENOISE 
 
-### TOOLS
+##### TOOLS
 
 - GITHUB PROJECTS
 - BALSAMIQ
 
-### MUST HAVE USER STORIES
+##### MUST HAVE USER STORIES
 
 1. as a site user I can view a list of posts so that I can survey the sites content at a glance
 1. as a site user I can view each post in detail so that I can engage with the content
