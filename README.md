@@ -68,11 +68,11 @@ Authorisation:
 
 Desktop:  
 
-[registration page](static/images/readme/auth%20mobile.png)  
+![registration page](static/images/readme/auth%20mobile.png)  
 
 Mobile:  
 
-[sign out page mobile](static/images/readme/auth%20desktop.png/)
+![sign out page mobile](static/images/readme/auth%20desktop.png/)
 
 
 Forum:  
@@ -81,22 +81,22 @@ List view:
 
 Desktop:  
 
-[home page](static/images/readme/list%20view%20desktop.png)  
+![home page](static/images/readme/list%20view%20desktop.png)  
 
 Mobile:  
 
-[home page mobile](static/images/readme/list%20view%20mobile.png)  
+![home page mobile](static/images/readme/list%20view%20mobile.png)  
 
 Post detail
-[post detail]()
-[post detail mobile]()
+![post detail]()
+![post detail mobile]()
 
 Create a post
-[create a post]()
+![create a post]()
 Edit/delete a post
-[edit a post mobile]()
+![edit a post mobile]()
 Update a profile
-[update a profile mobile]()
+![update a profile mobile]()
   
 ###### SHOULD HAVE USER STORIES  
 
