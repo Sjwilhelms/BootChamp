@@ -40,7 +40,7 @@ Said MVP is a web application where users can share experiences starting out in 
 
 ### DESIGN  
 
-##### MUST HAVE USER STORIES  
+###### MUST HAVE USER STORIES  
   
 Manually tested and passed
 
@@ -53,7 +53,7 @@ Manually tested and passed
 1. as a signed in site user I can update my profile biography
 1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
   
-##### SHOULD HAVE USER STORIES  
+###### SHOULD HAVE USER STORIES  
 
 Not implemented
 
@@ -67,9 +67,11 @@ Not implemented
   
 You can visit the [Project board](https://github.com/users/Sjwilhelms/projects/6) here. 
 
-##### DEPLOYMENT
+### DEPLOYMENT
 
-##### TESTING
+### TESTING
+
+###### VALIDATION
 
 HTML and CSS Validated with W3Schools. All views passed validation except 2 detailed below:  
 
@@ -90,5 +92,9 @@ Mobile:
 Desktop:  
 
 ![Desktop performance](static/images/readme/desktop%20performance.png)  
+
+###### USER TESTING
+
+The project has had a raft of manual testing from the developer and from other users.
 
 ### REFERENCES
