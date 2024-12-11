@@ -39,7 +39,7 @@ Said MVP is a web application where users can share experiences starting out in 
   
 ### DESIGN  
 
-The user stories establish the CRUD functionality of the website. Posts, Comments, and Profiles each have a data model that relates to a built in User model. 
+The user stories establish the CRUD functionality of the website. Posts, Comments, Profiles and Likes each have a data model that relates to a built in User model. The entity relationships laid out below includes some features that were not implemented in sprint 1.  
 
 ![ERD document](static/images/readme/erd.png/)
 
