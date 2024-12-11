@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ("title", "subtitle", "excerpt", "content", "featured_image", )
+        fields = ("title", "subtitle", "content", "featured_image", )
 
     def clean_featured_image(self):
         image = self.cleaned_data.get('featured_image')

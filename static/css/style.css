@@ -32,3 +32,7 @@ a {
     transform: scale(.95);
 }
 
+form input #id-login, 
+form input .text-input{
+    background-color: #fffcc8;
+}
