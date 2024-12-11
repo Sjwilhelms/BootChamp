@@ -2,11 +2,11 @@
 
 ###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
-BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a two week sprint to deliver the MVP.
+BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope and deliver the MVP.
 
 ### TABLE OF CONTENTS
 
-1. [USER STORIES]()
+<!-- 1. [USER STORIES]()  
     2. [MUST-HAVE USER STORIES](#must-have-user-stories)
     4. [SHOULD-HAVE USER STORIES]()
     5. [COULD-HAVE USER STORIES]()
@@ -18,11 +18,11 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 
 
 4. [REFERENCES]()
-5. []()
+5. []() -->
 
-### TECH STACK  
+##### TECH STACK  
 
-### LANGUAGES
+###### LANGUAGES
 
 - HTML 
 - CSS 
@@ -68,3 +68,5 @@ https://pagespeed.web.dev/analysis/https-boot-champ-5ba7df6635c3-herokuapp-com/4
 [Mobile performance](static/images/readme/mobile%20performance.png)  
 
 [Desktop performance](static/images/readme/desktop%20performance.png)  
+
+### REFERENCES
