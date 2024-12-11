@@ -2,11 +2,11 @@
 
 ###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
-BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope, devise must-have user stories, and deliver the MVP.  
+BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope, devise and prioritise user stories, and deliver the MVP.   
   
-Said MVP is a web application where users can share experiences starting out in software development by way of putting posts to a forum. A user can view a list of posts on the home page, and can click on each post to view more detail. Signed in users can create, edit and delete posts. Signed in users can comment on posts, and edit and delete those comments. Each registered user gets a profile which they can update, but not delete. 
+Said MVP is a web application where users can share experiences starting out in software development by way of putting posts to a forum. A user can view a list of posts on the home page, and can click on each post to view more detail. Signed in users can create, edit and delete posts. Signed in users can comment on posts, and edit and delete those comments. Each registered user gets a profile with their post and comment history which they can update, but not delete. 
 
-There are stories in the project backlog ready to go for a second sprint.
+
 
 <!-- 1. [USER STORIES]()  
     2. [MUST-HAVE USER STORIES](#must-have-user-stories)
@@ -63,6 +63,18 @@ Manually tested and passed
 1. as a signed in site user I can comment on a post and edit/delete said comment so that I can interact with other users
 1. as a signed in site user I can update my profile biography
 1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
+  
+##### SHOULD HAVE USER STORIES  
+
+Not implemented
+
+1. as a site user I can click on an image for full screen so that I can see it in detail
+1. as a site user I can scroll through a dynamically paginated 'endless' list of posts so that my load times are kept short
+1. as a site user I can search the site from the navbar so I can search as opposed to browse
+1. as a signed in site user I can leave a like on a comment or post so that I can interact with other users
+1. as a signed in site user I can review/moderate user content so as to filter for inappropriate content
+1. as a signed in site user I can categorise posts so that I can engage with a particular theme
+1. as a signed in site user I can create categories to assign posts so that I can 
 
 [Project board](https://github.com/users/Sjwilhelms/projects/6)
 
@@ -70,10 +82,12 @@ Manually tested and passed
 
 ##### TESTING
 
+HTML and CSS Validated
+
 https://pagespeed.web.dev/analysis/https-boot-champ-5ba7df6635c3-herokuapp-com/4mjp8pzpjy?form_factor=mobile
 
-[Mobile performance](static/images/readme/mobile%20performance.png)  
+![Mobile performance](static/images/readme/mobile%20performance.png)  
 
-[Desktop performance](static/images/readme/desktop%20performance.png)  
+![Desktop performance](static/images/readme/desktop%20performance.png)  
 
 ### REFERENCES
