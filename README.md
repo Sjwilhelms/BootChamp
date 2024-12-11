@@ -41,7 +41,13 @@ Said MVP is a web application where users can share experiences starting out in 
 
 The user stories establish the CRUD functionality of the website. Posts, Comments, Profiles and Likes each have a data model that relates to a built in User model. The entity relationships laid out below includes some features that were not implemented in sprint 1.  
 
-![ERD document](static/images/readme/erd.png/)
+![ERD document](static/images/readme/erd.png/)  
+
+BOOTCHAMP was intended to share a layout with contemporary social media
+
+![wireframes](static/images/readme/home(loggedOut).png)  
+
+![mobile wireframes](static/images/readme/mobilePostView.png)    
 
 ###### MUST HAVE USER STORIES  
   
@@ -55,6 +61,42 @@ Manually tested and passed
 1. as a signed in site user I can comment on a post and edit/delete said comment so that I can interact with other users
 1. as a signed in site user I can update my profile biography
 1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
+
+###### FEATURES
+
+Authorisation:  
+
+Desktop:  
+
+[registration page](static/images/readme/auth%20mobile.png)  
+
+Mobile:  
+
+[sign out page mobile](static/images/readme/auth%20desktop.png/)
+
+
+Forum:  
+
+List view:  
+
+Desktop:  
+
+[home page](static/images/readme/list%20view%20desktop.png)  
+
+Mobile:  
+
+[home page mobile](static/images/readme/list%20view%20mobile.png)  
+
+Post detail
+[post detail]()
+[post detail mobile]()
+
+Create a post
+[create a post]()
+Edit/delete a post
+[edit a post mobile]()
+Update a profile
+[update a profile mobile]()
   
 ###### SHOULD HAVE USER STORIES  
 
@@ -99,5 +141,9 @@ Desktop:
 ###### USER TESTING
 
 The project has had a raft of manual testing from the developer and from other users.
+
+###### AUTOMATIC TESTING
+
+The next iteration of BOOTCHAMP will feature automatic testing.
 
 ### REFERENCES
