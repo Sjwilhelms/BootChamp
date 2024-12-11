@@ -6,21 +6,7 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
   
 Said MVP is a web application where users can share experiences starting out in software development by way of putting posts to a forum. A user can view a list of posts on the home page, and can click on each post to view more detail. Signed in users can create, edit and delete posts. Signed in users can comment on posts, and edit and delete those comments. Each registered user gets a profile with their post and comment history which they can update, but not delete. 
 
-
-
-<!-- 1. [USER STORIES]()  
-    2. [MUST-HAVE USER STORIES](#must-have-user-stories)
-    4. [SHOULD-HAVE USER STORIES]()
-    5. [COULD-HAVE USER STORIES]()
-1. [UX DESIGN]()
-1. [FEATURES]()
-1. [TECHNOLOGY](#tech-stack)
-2. [DEPLOYMENT](#deployment)
-3. [TESTING]()
-4. [REFERENCES]()
-5. []() -->
-
-##### TECH STACK  
+### TECH STACK  
 
 ###### LANGUAGES
 
@@ -50,6 +36,9 @@ Said MVP is a web application where users can share experiences starting out in 
 - GITHUB PROJECTS - information radiators
 - BALSAMIQ - tool for creating wireframes
 - LUCIDCHART - tool for creating entity relationship diagrams
+  
+
+### DESIGN  
 
 ##### MUST HAVE USER STORIES  
   
@@ -75,18 +64,30 @@ Not implemented
 1. as a signed in site user I can review/moderate user content so as to filter for inappropriate content
 1. as a signed in site user I can categorise posts so that I can engage with a particular theme
 1. as a signed in site user I can create categories to assign posts so that I can 
-
-[Project board](https://github.com/users/Sjwilhelms/projects/6)
+  
+You can visit the [Project board](https://github.com/users/Sjwilhelms/projects/6) here. 
 
 ##### DEPLOYMENT
 
 ##### TESTING
 
-HTML and CSS Validated
+HTML and CSS Validated with W3Schools. All views passed validation except 2 detailed below:  
 
-https://pagespeed.web.dev/analysis/https-boot-champ-5ba7df6635c3-herokuapp-com/4mjp8pzpjy?form_factor=mobile
+accounts/signup 
+
+![sign up page error message](static/images/readme/w3%20validation%20auth%20--%20register.png)
+
+post_detail/
+
+![post detail error message](static/images/readme/post%20detail%20error%20message.png)
+
+I used page speed to validate my page for accessibility and performance on mobile and desktop.  
+
+Mobile:
 
 ![Mobile performance](static/images/readme/mobile%20performance.png)  
+  
+Desktop:  
 
 ![Desktop performance](static/images/readme/desktop%20performance.png)  
 
