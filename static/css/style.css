@@ -1,28 +1,25 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /* general style */
 
 main{
-    font-family: "Open Sans", sans-serif;
-}
-
-.navbar {
-    background-color: #ffffff; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    font-family: "Open Sans", sans-serif !important;
 }
 
 .navbar {
     background-color: #f8f9fa; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
-
 
 .navbar .navbar-nav .nav-link {
     color: #333; 
 }
 
-.navbar .navbar-brand {
+.navbar .navbar-brand,
+.navbar-brand {
     color: #000; 
+    font-family: "Jockey One", Arial sans-serif !important;
 }
 
 a {
