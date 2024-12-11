@@ -2,7 +2,11 @@
 
 ###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
-BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope and deliver the MVP.
+BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope, devise must-have user stories, and deliver the MVP.  
+  
+Said MVP is a web application where users can share experiences starting out in software development by way of putting posts to a forum. A user can view a list of posts on the home page, and can click on each post to view more detail. Signed in users can create, edit and delete posts. Signed in users can comment on posts, and edit and delete those comments. Each registered user gets a profile which they can update, but not delete. 
+
+There are stories in the project backlog ready to go for a second sprint.
 
 <!-- 1. [USER STORIES]()  
     2. [MUST-HAVE USER STORIES](#must-have-user-stories)
@@ -18,31 +22,38 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 
 ##### TECH STACK  
 
-##### LANGUAGES
+###### LANGUAGES
 
-- HTML 
-- CSS 
-- JS 
-- PYTHON 
+- HTML
+- CSS
+- JS
+- PYTHON
 
-##### SERVICES
+###### SERVICES
 
-- HEROKU 
-- NEONDB  
-- CLOUDINARY 
+- HEROKU - web application hosting service
+- NEONDB - database service
+- CLOUDINARY - image hosting service
+- GOOGLEFONTS - Jockey One and Open Sans fonts 
+- FONTAWESOME - Used for icons
  
-##### FRAMEWORKS
+###### LIBRARIES AND FRAMEWORKS
 
-- DJANGO 
-- DJANGO CRISPY FORMS 
-- WHITENOISE 
+- BOOTSTRAP - A library of CSS class for quick styling
+- DJANGO - Python framework for full stack applications
+- DJANGO CRISPY FORMS - Bootstrap compatible form layouts
+- WHITENOISE - serving static files dynamically
+- DJANGO ALLAUTH - authorisation and secure site access
 
-##### TOOLS
+###### TOOLS
 
-- GITHUB PROJECTS
-- BALSAMIQ
+- GITHUB PROJECTS - information radiators
+- BALSAMIQ - tool for creating wireframes
+- LUCIDCHART - tool for creating entity relationship diagrams
 
-##### MUST HAVE USER STORIES
+##### MUST HAVE USER STORIES  
+  
+Manually tested and passed
 
 1. as a site user I can view a list of posts so that I can survey the sites content at a glance
 1. as a site user I can view each post in detail so that I can engage with the content
@@ -55,9 +66,9 @@ BOOTCHAMP is a forum for jr software developers to share projects, inspirational
 
 [Project board](https://github.com/users/Sjwilhelms/projects/6)
 
-### DEPLOYMENT
+##### DEPLOYMENT
 
-### TESTING
+##### TESTING
 
 https://pagespeed.web.dev/analysis/https-boot-champ-5ba7df6635c3-herokuapp-com/4mjp8pzpjy?form_factor=mobile
 
