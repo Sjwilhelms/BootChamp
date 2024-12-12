@@ -45,13 +45,11 @@ The user stories establish the CRUD functionality of the website. Posts, Comment
 
 ![ERD document](static/images/readme/erd.png/)  
 
-BOOTCHAMP was intended to share a layout with contemporary social media
+BOOTCHAMP was intended to share the familiar layout with contemporary social media.
 
 ![wireframes](static/images/readme/home(loggedOut).png)  
 
 ![mobile wireframes](static/images/readme/mobilePostView.png)    
-
-![](static/images/readme/)
 
 ###### MUST HAVE USER STORIES  
 
@@ -86,15 +84,25 @@ BOOTCHAMP will have dynamic pagination using AJAX logic; a like button that tota
 
 BOOTCHAMP's test posts dilute the stated goal of the project. Better targeted test users and more semantic forms would help to correct this lilt.
 
-It will also have another iteration of styling to give the project more flavour and to fully eliminate mobile scrolling from all forms throughout the project. . 
+It will also have another iteration of styling to give the project more flavour and to fully eliminate mobile scrolling from all forms throughout the project. 
 
 ### DEPLOYMENT
+
+###### INSTALLATION  
+
+`python3 install -r requirements.txt`
+
+###### POSTGRES
+###### DATABASE
+###### CLOUDINARY
+###### WHITENOISE
+###### HEROKU
 
 ### TESTING
 
 ###### VALIDATION
 
-HTML and CSS Validated with W3Schools. All views passed validation except 2 detailed below:  
+HTML and CSS Validated with [W3Schools](https://validator.w3.org/). All views passed validation except 2 detailed below:  
 
 accounts/signup 
 
@@ -114,7 +122,9 @@ Desktop:
 
 ![Desktop performance](static/images/readme/desktop%20performance.png)  
 
-###### USER TESTING
+[JSLint](https://www.jslint.com/) was used to lint javascript. It failed on all counts due to not being able to access DOM variables. Manual testing was required. 
+
+###### MANUAL TESTING
 
 The project has had a raft of manual testing from the developer and from other users.
 
