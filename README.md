@@ -109,8 +109,10 @@ You will need to create an `env.py` file in the project directory and add this t
 
 ###### DEVELOP YOUR OWN DJANGO APP
 
-Set up accounts and billing with [HEROKU](https://www.heroku.com/)
-Set up account with [CLOUDINARY](https://console.cloudinary.com/)
+Set up accounts and billing with [HEROKU](https://www.heroku.com/)  
+
+Set up account with [CLOUDINARY](https://console.cloudinary.com/)  
+
 Set up account with [NEONDB](https://neon.tech/)
 
 Open a new repository in [Github](https://github.com/) and open your preferred IDE. Clone your repository to a new folder and open it. 
@@ -118,24 +120,38 @@ Open a new repository in [Github](https://github.com/) and open your preferred I
 To install Django and create a new project, in the terminal window run the following commands:
 
 `
-pip3 install Django~=4.2.1
-pip3 freeze --local > requirements.txt
-django-admin startproject choose_your_project_name .
-python3 manage.py migrate
-python3 manage.py runserver
+pip3 install Django~=4.2.1  
+
+pip3 freeze --local > requirements.txt  
+
+django-admin startproject choose_your_project_name .  
+
+python3 manage.py migrate  
+
+python3 manage.py runserver  
+
 `
 
-Line by line, this:  
+Line by line, this will:  
 
-installs django  
-creates a file called `requirements.txt` and adds    
-start a new django project (in BOOTCHAMP this is called `config`)  
-applies prebuilt django migrations  
-run's a local server -- you will likely see an error message 'DisallowedHost at /...'  
+install django  
+create a file called `requirements.txt` and adds    
+start a new django project (in BOOTCHAMP this is called `config`, this will be used as placeholder for your own project name).   
+apply prebuilt django migrations  
+run a local server -- you will likely see an error message 'DisallowedHost at /...'  
+
+You will add the given value to `ALLOWED_HOSTS` in `config/settings.py`  
+
+Below this you will add the following line of code: `CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com',]`.  
+This lets your code institute IDE and Heroku pass CSRF verification.   
+
+Within the Django project, you will create a new app. Each app is a component of a project. In a small project like BOOTCHAMP one app can handle all of the functionality. Run this code: `python3 manage.py startapp forum`.  
+
+In `settings.py` there is a variable called `INSTALLED_APPS`. Add `"forum", ` to the list of apps.  
+
+Save your file. 
 
 
-
- `pip install -r requirements.txt` 
 
 ###### POSTGRES
 ###### DATABASE
