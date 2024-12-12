@@ -12,10 +12,11 @@ Said MVP is a web application where users can share experiences starting out in 
 
 ###### LANGUAGES
 
-- HTML
-- CSS
-- JS
-- PYTHON
+- HTML - semantic mark up language
+- CSS - style the HTML
+- JAVASCRIPT - dynamic front end interactions
+- PYTHON - back end logic
+- SQL - testing models and migrations
 
 ###### SERVICES
 
@@ -86,7 +87,7 @@ Not implemented
   
 BOOTCHAMP will have dynamic pagination using AJAX logic; a like button that totals on the recipients profile; full screen viewer for images; and a search bar. 
 
-BOOTCHAMP's test posts dilute the stated goal of the project. Better targeted test users and more semantic forms would help to correct this lilt.
+BOOTCHAMP's test posts dilute the stated goal of the project. Better targeted test users and more semantic forms could correct this.
 
 It will also have another iteration of styling to give the project more flavour and to fully eliminate mobile scrolling from all forms throughout the project. 
 
@@ -94,17 +95,35 @@ It will also have another iteration of styling to give the project more flavour 
 
 ###### CLONE THE REPOSITORY  
 
-When you clone this repository to a new terminal you will have a couple of things to do before you can get started. 
+When you clone this repository to a new terminal you will have a couple of things to do before you can start working on an issue. 
 
 In the root menu you will see a file called `requirements.txt`. This contains a list of dependencies which you will need to install to run this project. Run the following command in the terminal window of the same directory to install the contents of that list:
 
 `pip install -r requirements.txt`
 
-In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable so that you can deploy the project on a local server using your own IDE. Henceforth this file will be referred to as `settings.py`.
+In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable so that you can deploy the project on a local server using your own IDE. Henceforth this file will be referred to as `settings.py`. Inside `settings.py` there is a variable `DEBUG`. Whilst you are developing your project you will find it useful to recieve detailed information when you encounter an error by setting `DEBUG = "True"`. For production deployment set `DEBUG = "False"`. 
 
 You will need to create an `env.py` file in the project directory and add this to `.gitignore`. In env.py you will `import os` and store your `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`. You will create your own `SECRET_KEY`. You will get your two URL's from your NeonDB and Cloudinary dashboards. 
 
 ###### DEVELOP YOUR OWN DJANGO APP
+
+Set up accounts and billing with [HEROKU](https://www.heroku.com/)
+Set up account with [CLOUDINARY](https://console.cloudinary.com/)
+Set up account with [NEONDB](https://neon.tech/)
+
+Open a new repository in [Github](https://github.com/) and open your preferred IDE. Clone your repository to a new folder and open it. 
+
+To install Django and create a new project, in the terminal window run the following commands:
+
+`
+pip3 install Django~=4.2.1
+pip3 freeze --local > requirements.txt
+django-admin startproject choose_your_project_name
+python3 manage.py migrate
+python3 manage.py runserver
+`
+
+ `pip install -r requirements.txt` 
 
 ###### POSTGRES
 ###### DATABASE
