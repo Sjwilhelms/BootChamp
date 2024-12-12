@@ -68,7 +68,7 @@ Manually tested and passed
 1. as a signed in site user I can create, edit, and/or delete a post so that I can contribute to the forum
 1. as a signed in site user I can comment on a post and edit/delete said comment so that I can interact with other users
 1. as a signed in site user I can update my profile biography
-1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
+1. as a signed in site user I can get feedback whenever I make a contribution or a change so that I can use the website confidently  
 
 ###### SHOULD HAVE USER STORIES  
 
@@ -102,9 +102,7 @@ In the root menu you will see a file called `requirements.txt`. This contains a 
 
 In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable so that you can deploy the project on a local server using your own IDE. Henceforth this file will be referred to as `settings.py`.
 
-You will need to create an `env.py` file in the project directory and add this to `.gitignore`. In env.py you will `import os` and store your `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`.
-
-You will create your own `SECRET_KEY`. You will get your two URL's from your 
+You will need to create an `env.py` file in the project directory and add this to `.gitignore`. In env.py you will `import os` and store your `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`. You will create your own `SECRET_KEY`. You will get your two URL's from your NeonDB and Cloudinary dashboards. 
 
 ###### DEVELOP YOUR OWN DJANGO APP
 
