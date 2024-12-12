@@ -1,6 +1,6 @@
 # BOOTCHAMP  
 
-![mockup](static/images/readme/Screenshot%202024-12-12%20005624.png)
+![mockup](static/images/readme/Screenshot%202024-12-12%20121911.png)
 
 ###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
