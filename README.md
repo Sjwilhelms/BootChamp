@@ -64,18 +64,17 @@ Manually tested and passed
 
 ###### FEATURES
 
-Authorisation:  
+###### Authorisation  
 
 Desktop:  
 
+![sign out page mobile](static/images/readme/auth%20desktop.png/)  
+
+Mobile:
+
 ![registration page](static/images/readme/auth%20mobile.png)  
 
-Mobile:  
-
-![sign out page mobile](static/images/readme/auth%20desktop.png/)
-
-
-Forum:  
+###### Forum  
 
 List view:  
 
@@ -87,15 +86,24 @@ Mobile:
 
 ![home page mobile](static/images/readme/list%20view%20mobile.png)  
 
-Post detail
-![post detail]()
-![post detail mobile]()
+Post detail:  
 
-Create a post
-![create a post]()
-Edit/delete a post
-![edit a post mobile]()
-Update a profile
+![post detail](static/images/readme/postDetail.png)  
+
+![post detail mobile](static/images/readme/post%20detail%20mobile.png)
+
+Forms:  
+
+Create a post:  
+
+![create a post](static/images/readme/newPostForm.png)  
+
+Edit/delete a post  
+
+![edit a post mobile](static/images/readme/new%20post%20mobile.png)  
+
+Update a profile  
+
 ![update a profile mobile]()
   
 ###### SHOULD HAVE USER STORIES  
