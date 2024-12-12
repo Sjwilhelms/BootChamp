@@ -4,7 +4,7 @@
 
 BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope, devise and prioritise user stories, and deliver the MVP.   
   
-Said MVP is a web application where users can share experiences starting out in software development by way of putting posts to a forum. A user can view a list of posts on the home page, and can click on each post to view more detail. Signed in users can create, edit and delete posts. Signed in users can comment on posts, and edit and delete those comments. Each registered user gets a profile with their post and comment history which they can update, but not delete. 
+Said MVP is a web application where users can share experiences starting out in software development by way of putting posts to a forum. A user can view a list of posts on the home page, and can click on each post to view more detail. Signed in users can create, edit and delete posts. Signed in users can comment on posts, and edit and delete those comments. Each registered user gets a profile with their post and comment history which they can update, but not delete.  Bootstrap toasts notify users of changes made and Django all-auth handles user registration securely. 
 
 ### TECH STACK  
 
@@ -50,6 +50,8 @@ BOOTCHAMP was intended to share a layout with contemporary social media
 ![mobile wireframes](static/images/readme/mobilePostView.png)    
 
 ###### MUST HAVE USER STORIES  
+
+You can visit the [Project board](https://github.com/users/Sjwilhelms/projects/6) here. 
   
 Manually tested and passed
 
@@ -62,50 +64,6 @@ Manually tested and passed
 1. as a signed in site user I can update my profile biography
 1. as a signed in site user I can get feedback whenever I makea contribution or a change so that I can use the website confidently  
 
-###### FEATURES
-
-###### Authorisation  
-
-Desktop:  
-
-![sign out page mobile](static/images/readme/auth%20desktop.png/)  
-
-Mobile:
-
-![registration page](static/images/readme/auth%20mobile.png)  
-
-###### Forum  
-
-List view:  
-
-Desktop:  
-
-![home page](static/images/readme/list%20view%20desktop.png)  
-
-Mobile:  
-
-![home page mobile](static/images/readme/list%20view%20mobile.png)  
-
-Post detail:  
-
-![post detail](static/images/readme/postDetail.png)  
-
-![post detail mobile](static/images/readme/post%20detail%20mobile.png)
-
-Forms:  
-
-Create a post:  
-
-![create a post](static/images/readme/newPostForm.png)  
-
-Edit/delete a post  
-
-![edit a post mobile](static/images/readme/new%20post%20mobile.png)  
-
-Update a profile  
-
-![update a profile mobile]()
-  
 ###### SHOULD HAVE USER STORIES  
 
 Not implemented
@@ -117,8 +75,14 @@ Not implemented
 1. as a signed in site user I can review/moderate user content so as to filter for inappropriate content
 1. as a signed in site user I can categorise posts so that I can engage with a particular theme
 1. as a signed in site user I can create categories to assign posts so that I can 
+
+###### THE SECOND ITERATION
   
-You can visit the [Project board](https://github.com/users/Sjwilhelms/projects/6) here. 
+BOOTCHAMP will have dynamic pagination using AJAX logic; a like button that totals on the recipients profile; full screen viewer for images; and a search bar. 
+
+BOOTCHAMP's test posts dilute the stated goal of the project. Better targeted test users and more semantic forms would help to correct this lilt.
+
+It will also have another iteration of styling to give the project more flavour and to fully eliminate mobile scrolling from all forms throughout the project. . 
 
 ### DEPLOYMENT
 
@@ -155,3 +119,4 @@ The project has had a raft of manual testing from the developer and from other u
 The next iteration of BOOTCHAMP will feature automatic testing.
 
 ### REFERENCES
+
