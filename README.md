@@ -121,9 +121,9 @@ Open a new repository in [Github](https://github.com/) and open it in preferred 
 Set up accounts and billing with [HEROKU](https://www.heroku.com/)  
 - create a new app and link it to github repo
 - select region as Europe
-- in Settings, add CLOUDINARY_URL, DATABASE__URL, and SECRET_KEY to config variables(in your project these variables are confidentially stored in `env.py` file, and called by `settings.py`)
-- in Deploy, you can select which github branch to deploy from. This can help preserve the main branch whilst troubleshooting.
-- in Deploy, press the deploy button at the bottom of the page. This will take a moment.
+- in `Settings`, add `CLOUDINARY_URL`, `DATABASE__URL`, and `SECRET_KEY` to config vars(in your project these variables are confidentially stored in `env.py` file, and called by `settings.py`)
+- in `Deploy`, you can select which github branch to deploy from. This can help preserve the main branch whilst troubleshooting.
+- in `Deploy`, press the `Deploy Branch` button at the bottom of the page. This will take a moment.
 
 ### TESTING
 
@@ -139,7 +139,8 @@ post_detail/
 
 ![post detail error message](static/images/readme/post%20detail%20error%20message.png)
 
-I used page speed to validate my page for accessibility and performance on mobile and desktop.  
+I used [PageSpeed Insights](https://pagespeed.web.dev/) to validate my page for accessibility and performance on mobile and desktop.  
+Accessibility and contrast scored well. Areas to review are centered around image hanndling and loading URL's in the head element of the base template. 
 
 Mobile:
 
@@ -161,3 +162,46 @@ The next iteration of BOOTCHAMP will feature automatic testing.
 
 ### REFERENCES
 
+Project is a variation on the [CodeStar Blog](https://github.com/Sjwilhelms/django-blog) project from the Code Institute LMS and my process reflects that project and the developing with Django section of the LMS.  
+
+The `Comment` model, `comments.js`, are lifted wholesale from CodeStar. 
+
+I used the following to help me with troubleshooting:
+
+[Mozilla](https://developer.mozilla.org/en-US/docs/Learn)  
+
+[W3Schools](https://www.w3schools.com/)  
+
+[Stack Overflow](https://stackoverflow.com/)  
+
+I used the following to help me with ideation:
+
+[ClaudeAi](https://claude.ai/new)  
+
+[ChatGpt](https://chatgpt.com/)
+
+### REFLECTIONS
+
+Does the world need a social media for jr software developers? Who could say?  
+
+This project has been an excellent learning experience but I can't say this is the finished article. As a learning experience I'm a lot more confident with Django and believe I can cut down the development time significantly and devote more time to style.
+
+###### DESIGN 
+
+The familiar layout works. Overall, without one superuser creating a theme, more work is required to imprint that theme onto the site. I think particularly working with the models and the forms. 
+
+###### CRUD?
+
+I like the way it works and will be adding more features in the new year. I would like to handle images more elegantly, and PageSpeed Insights indicates that I'm mixing HTTP and HTTPS requests. The comments logic is lifted wholesale from Codestar Blog and going forwards I'd like to replace it with my own.
+
+###### STYLE?
+
+Styling was sadly relegated due to precedence of other factors. I prefer a clean interface but not this clean. 
+
+###### RESPONSIVENESS
+
+Am I responsive? Mostly! On mobile there is some overflow scrolling on the registration page, and each of my custom forms. Better for the user to see everything they need at a glance. This would help give more meaning to my forms, helping to guide user input. 
+
+###### SUMMARY
+
+Theres plenty to do. 

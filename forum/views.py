@@ -115,6 +115,9 @@ def comment_delete(request, slug, comment_id):
 # views pertaining to posts
 
 def create_post_view(request):
+    """
+    Create an instance of :model:`forum.post`
+    """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -131,6 +134,9 @@ def create_post_view(request):
     return render(request, 'forum/create_post.html', {'form': form})
 
 def edit_post_view(request, slug):
+    """
+    Edit a particular instance of a post by slug
+    """
     post = get_object_or_404(Post, slug=slug)
 
     if request.method == 'POST':
@@ -149,6 +155,9 @@ def edit_post_view(request, slug):
     })
 
 def delete_post_view(request, slug):
+    """
+    Delete a particular instance of a post by slug
+    """
     post = get_object_or_404(Post, slug=slug)
     post.delete()
     messages.success(request, "Post deleted successfully!")
@@ -157,6 +166,9 @@ def delete_post_view(request, slug):
 # views pertaining to profile
 
 def profile_view(request, username):
+    """
+    View a particular instance of a profile by username
+    """
     user = get_object_or_404(User, username=username)
     profile = user.profile 
     posts = Post.objects.filter(author=user).order_by('-created_on')
@@ -169,23 +181,12 @@ def profile_view(request, username):
         'comments': comments,}
         )
 
-# view to create custom profile
-
-def create_profile_view(request):
-    profile = request.user.get_or_create_profile()
-    if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Profile updated successfully!")
-            return redirect('profile', username=request.user.username) 
-    else:
-        form = ProfileForm(instance=profile)
-    return render(request, 'forum/create_profile.html', {'form': form})
-
 # view to edit custom profile
 
 def edit_profile_view(request):
+    """
+    Edit the signed in users own profile page
+    """
     profile = request.user.get_or_create_profile()
     
     if request.method == 'POST':

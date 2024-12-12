@@ -3,33 +3,43 @@
 {% block content %}
 
 
-  {% for post in object_list %}
-  
-  <div class="card my-3 post-list-item p-3">
+{% for post in object_list %}
+
+<div class="card my-3 post-list-item p-3">
+    {% if post.featured_image and not 'placeholder' in post.featured_image.url %}
     <div class="row g-0">
-      <div class="col-md-4">
-        {% if 'placeholder' in post.featured_image.url %}
-        <a href="{% url 'post_detail' post.slug %}"><img class="img-fluid rounded-start mx-auto d-block" src="{% static 'images/default.jpg' %}"
-          alt="placeholder image" style="max-height: 300px;"></a>
-        {% else %}
-        <a href="{% url 'post_detail' post.slug %}"><img class="img-fluid rounded-start mx-auto d-block" src="{{ post.featured_image.url }}" alt="{{ post.title }}"
-          style="max-height: 200px;"></a>
-        {% endif %}
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <a href="{% url 'post_detail' post.slug %}" class="stretched-link">
-            <h5 class="card-title">{{post.title}}</h5>
-          </a>
-          <a href="{% url 'profile' username=post.author.username %}">
-            <h6>{{post.author}}</h6>
-          </a>
-          <p class="card-text">{{post.excerpt}}</p>
-          <p class="card-text"><small>{{post.created_on}}</small></p>
+        <div class="col-md-4">
+            <a href="{% url 'post_detail' post.slug %}">
+                <img class="img-fluid rounded-start mx-auto d-block" src="{{ post.featured_image.url }}"
+                    alt="{{ post.title }}" style="max-height: 200px;">
+            </a>
         </div>
-      </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <a href="{% url 'post_detail' post.slug %}" class="stretched-link">
+                    <h5 class="card-title">{{post.title}}</h5>
+                </a>
+                <a href="{% url 'profile' username=post.author.username %}">
+                    <h6>{{post.author}}</h6>
+                </a>
+                <p class="card-text">{{post.subtitle}}</p>
+                <p class="card-text"><small>{{post.created_on}}</small></p>
+            </div>
+        </div>
     </div>
-  </div>
-  {% endfor %}
+    {% else %}
+    <div class="card-body">
+        <a href="{% url 'post_detail' post.slug %}" class="stretched-link">
+            <h5 class="card-title">{{post.title}}</h5>
+        </a>
+        <a href="{% url 'profile' username=post.author.username %}">
+            <h6>{{post.author}}</h6>
+        </a>
+        <p class="card-text">{{post.subtitle}}</p>
+        <p class="card-text"><small>{{post.created_on}}</small></p>
+    </div>
+    {% endif %}
+</div>
+{% endfor %}
 
 {% endblock content %}
