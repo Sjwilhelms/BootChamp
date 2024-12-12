@@ -90,7 +90,17 @@ It will also have another iteration of styling to give the project more flavour 
 
 ###### INSTALLATION  
 
-`python3 install -r requirements.txt`
+When you clone this repository to a new terminal you will have a couple of things to do before you can get started. 
+
+In the root menu you will see a file called `requirements.txt`. This contains a list of dependencies which you will need to install to run this project. Run the following command in the same directory to install the contents of that list:
+
+`pip install -r requirements.txt`
+
+In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable. 
+
+You will need to create an `env.py` file in the project directory and add this to `.gitignore`.
+
+
 
 ###### POSTGRES
 ###### DATABASE
