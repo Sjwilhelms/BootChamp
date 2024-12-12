@@ -43,6 +43,7 @@ Said MVP is a web application where users can share experiences starting out in 
 - [W3C](https://validator.w3.org/) - validate HTML
 - [W3C](https://jigsaw.w3.org/css-validator/) - validate CSS
 - [JSLint](https://www.jslint.com/) - Lint Javascript
+- [PageSpeed Insights](https://pagespeed.web.dev/) - performance and accessibility review
 
 ### DESIGN  
 
@@ -105,59 +106,24 @@ In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS
 
 Inside `settings.py` there is a variable `DEBUG`. Whilst you are developing your project you will find it useful to recieve detailed information when you encounter an error by setting `DEBUG = "True"`. For production deployment set `DEBUG = "False"`. 
 
-You will need to create an `env.py` file in the project directory and add this to `.gitignore`. In env.py you will `import os` and store your `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`. You will create your own `SECRET_KEY`. You will get your two URL's from your NeonDB and Cloudinary dashboards. 
+Create an `env.py` file in the project directory and add this to `.gitignore`. This will keep sensitive information confidential. In env.py `import os` and store `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`. Create your own `SECRET_KEY`. Get URL's from your NeonDB and Cloudinary dashboards. 
 
-###### DEVELOP YOUR OWN DJANGO APP
-
-Set up accounts and billing with [HEROKU](https://www.heroku.com/)  
+###### DEPLOY THE PROJECT
 
 Set up account with [CLOUDINARY](https://console.cloudinary.com/)  
+- get your URL, and you can review uploaded images on your dashboard
 
 Set up account with [NEONDB](https://neon.tech/)
+- get your API key
 
-Open a new repository in [Github](https://github.com/) and open your preferred IDE. Clone your repository to a new folder and open it. 
+Open a new repository in [Github](https://github.com/) and open it in preferred IDE. 
 
-To install Django and create a new project, in the terminal window run the following commands:
-
-`
-pip3 install Django~=4.2.1  
-
-pip3 freeze --local > requirements.txt  
-
-django-admin startproject choose_your_project_name .  
-
-python3 manage.py migrate  
-
-python3 manage.py runserver  
-
-`
-
-Line by line, this will:  
-
-install django  
-create a file called `requirements.txt` and adds    
-start a new django project (in BOOTCHAMP this is called `config`, this will be used as placeholder for your own project name).   
-apply prebuilt django migrations  
-run a local server -- you will likely see an error message 'DisallowedHost at /...'  
-
-You will add the given value to `ALLOWED_HOSTS` in `config/settings.py`  
-
-Below this you will add the following line of code: `CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com',]`.  
-This lets your code institute IDE and Heroku pass CSRF verification.   
-
-Within the Django project, you will create a new app. Each app is a component of a project. In a small project like BOOTCHAMP one app can handle all of the functionality. Run this code: `python3 manage.py startapp forum`.  
-
-In `settings.py` there is a variable called `INSTALLED_APPS`. Add `"forum", ` to the list of apps.  
-
-Save your file. 
-
-
-
-###### POSTGRES
-###### DATABASE
-###### CLOUDINARY
-###### WHITENOISE
-###### HEROKU
+Set up accounts and billing with [HEROKU](https://www.heroku.com/)  
+- create a new app and link it to github repo
+- select region as Europe
+- in Settings, add CLOUDINARY_URL, DATABASE__URL, and SECRET_KEY to config variables(in your project these variables are confidentially stored in `env.py` file, and called by `settings.py`)
+- in Deploy, you can select which github branch to deploy from. This can help preserve the main branch whilst troubleshooting.
+- in Deploy, press the deploy button at the bottom of the page. This will take a moment.
 
 ### TESTING
 
