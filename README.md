@@ -101,7 +101,9 @@ In the root menu you will see a file called `requirements.txt`. This contains a 
 
 `pip install -r requirements.txt`
 
-In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable so that you can deploy the project on a local server using your own IDE. Henceforth this file will be referred to as `settings.py`. Inside `settings.py` there is a variable `DEBUG`. Whilst you are developing your project you will find it useful to recieve detailed information when you encounter an error by setting `DEBUG = "True"`. For production deployment set `DEBUG = "False"`. 
+In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable so that you can deploy the project on a local server using your own IDE. Henceforth this file will be referred to as `settings.py`.   
+
+Inside `settings.py` there is a variable `DEBUG`. Whilst you are developing your project you will find it useful to recieve detailed information when you encounter an error by setting `DEBUG = "True"`. For production deployment set `DEBUG = "False"`. 
 
 You will need to create an `env.py` file in the project directory and add this to `.gitignore`. In env.py you will `import os` and store your `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`. You will create your own `SECRET_KEY`. You will get your two URL's from your NeonDB and Cloudinary dashboards. 
 
@@ -118,10 +120,20 @@ To install Django and create a new project, in the terminal window run the follo
 `
 pip3 install Django~=4.2.1
 pip3 freeze --local > requirements.txt
-django-admin startproject choose_your_project_name
+django-admin startproject choose_your_project_name .
 python3 manage.py migrate
 python3 manage.py runserver
 `
+
+Line by line, this:  
+
+installs django  
+creates a file called `requirements.txt` and adds    
+start a new django project (in BOOTCHAMP this is called `config`)  
+applies prebuilt django migrations  
+run's a local server -- you will likely see an error message 'DisallowedHost at /...'  
+
+
 
  `pip install -r requirements.txt` 
 
