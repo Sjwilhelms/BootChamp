@@ -19,26 +19,30 @@ Said MVP is a web application where users can share experiences starting out in 
 
 ###### SERVICES
 
-- HEROKU - web application hosting service
-- NEONDB - database service
-- CLOUDINARY - image hosting service
-- GOOGLEFONTS - Jockey One and Open Sans fonts 
-- FONTAWESOME - Used for icons
+- [HEROKU](https://www.heroku.com/) - web application hosting
+- [NEONDB](https://neon.tech/) - PostgreSQL database 
+- [CLOUDINARY](https://console.cloudinary.com/) - image hosting
+- [GOOGLEFONTS](https://fonts.google.com/) - Jockey One and Open Sans fonts 
+- [FONTAWESOME](https://fontawesome.com/) - icons
  
 ###### LIBRARIES AND FRAMEWORKS
 
-- BOOTSTRAP - A library of CSS class for quick styling
-- DJANGO - Python framework for full stack applications
-- DJANGO CRISPY FORMS - Bootstrap compatible form layouts
-- WHITENOISE - serving static files dynamically
-- DJANGO ALLAUTH - authorisation and secure site access
+- [BOOTSTRAP](https://getbootstrap.com/) - A library of CSS class for quick styling
+- [DJANGO](https://www.djangoproject.com/) - Python framework for full stack applications
+- [DJANGO CRISPY FORMS](https://django-crispy-forms.readthedocs.io/en/latest/) - Bootstrap compatible form layouts
+- [WHITENOISE](https://whitenoise.readthedocs.io/en/latest/) - serving static files dynamically
+- [ALLAUTH](https://docs.allauth.org/en/latest/) - authorisation and secure site access
 
 ###### TOOLS
 
 - GITHUB PROJECTS - information radiators
-- BALSAMIQ - tool for creating wireframes
-- LUCIDCHART - tool for creating entity relationship diagrams
-  
+- [BALSAMIQ](https://balsamiq.com) - creating wireframes
+- [LUCIDCHART](https://www.lucidchart.com/pages/?) - creating entity relationship diagrams
+- [AMIRESPONSIVE](https://ui.dev/amiresponsive) - creating mockups
+- [W3C](https://validator.w3.org/) - validate HTML
+- [W3C](https://jigsaw.w3.org/css-validator/) - validate CSS
+- [JSLint](https://www.jslint.com/) - Lint Javascript
+
 ### DESIGN  
 
 The user stories establish the CRUD functionality of the website. Posts, Comments, Profiles and Likes each have a data model that relates to a built in User model. The entity relationships laid out below includes some features that were not implemented in sprint 1.  
@@ -88,19 +92,21 @@ It will also have another iteration of styling to give the project more flavour 
 
 ### DEPLOYMENT
 
-###### INSTALLATION  
+###### CLONE THE REPOSITORY  
 
 When you clone this repository to a new terminal you will have a couple of things to do before you can get started. 
 
-In the root menu you will see a file called `requirements.txt`. This contains a list of dependencies which you will need to install to run this project. Run the following command in the same directory to install the contents of that list:
+In the root menu you will see a file called `requirements.txt`. This contains a list of dependencies which you will need to install to run this project. Run the following command in the terminal window of the same directory to install the contents of that list:
 
 `pip install -r requirements.txt`
 
-In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable. 
+In `config/settings.py` you will need to add your own IP's to the `ALLOWED_HOSTS` variable so that you can deploy the project on a local server using your own IDE. Henceforth this file will be referred to as `settings.py`.
 
-You will need to create an `env.py` file in the project directory and add this to `.gitignore`.
+You will need to create an `env.py` file in the project directory and add this to `.gitignore`. In env.py you will `import os` and store your `SECRET_KEY`, `CLOUDINARY_URL`, and `DATABASE_URL` variables which will be called in your `settings.py`.
 
+You will create your own `SECRET_KEY`. You will get your two URL's from your 
 
+###### DEVELOP YOUR OWN DJANGO APP
 
 ###### POSTGRES
 ###### DATABASE
