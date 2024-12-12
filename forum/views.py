@@ -125,6 +125,8 @@ def comment_delete(request, slug, comment_id):
 def create_post_view(request):
     """
     Create an instance of :model:`forum.post`
+
+    create_post.html
     """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -144,6 +146,8 @@ def create_post_view(request):
 def edit_post_view(request, slug):
     """
     Edit a particular instance of a post by slug
+
+    edit_post.html
     """
     post = get_object_or_404(Post, slug=slug)
 
@@ -176,6 +180,8 @@ def delete_post_view(request, slug):
 def profile_view(request, username):
     """
     View a particular instance of a profile by username, showing also posts and comments
+
+    profile_view.html
     """
     user = get_object_or_404(User, username=username)
     profile = user.profile 
@@ -194,6 +200,8 @@ def profile_view(request, username):
 def edit_profile_view(request):
     """
     Edit the signed in users own profile page
+
+    edit_profile.html
     """
     profile = request.user.get_or_create_profile()
     
