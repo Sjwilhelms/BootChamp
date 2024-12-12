@@ -7,12 +7,14 @@ from django.urls import reverse
 from .forms import PostForm, CommentForm, ProfileForm
 from .models import Post, Comment 
 
-# Models for viewing all posts on the home page and for viewing each post on it's own page
+# for viewing all posts on the home page 
 class PostList(generic.ListView):
     """
     Displays list of posts"
     """
     model = Post
+
+# views for posts and comments 
 
 def post_detail(request, slug):
     """
@@ -111,6 +113,12 @@ def comment_delete(request, slug, comment_id):
     else:
         messages.add_message(request, messages.ERROR, "You can only delete your own comments!")
     return HttpResponseRedirect(reverse("post_detail", kwargs={"slug":slug}))
+
+
+
+
+
+
 
 # views pertaining to posts
 
