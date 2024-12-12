@@ -166,6 +166,8 @@ Project is a variation on the [CodeStar Blog](https://github.com/Sjwilhelms/djan
 
 The `Comment` model, `comments.js`, are lifted wholesale from CodeStar. 
 
+I used LLM assistants listed below to create user profiles each time a user registrates. 
+
 I used the following to help me with troubleshooting:
 
 [Mozilla](https://developer.mozilla.org/en-US/docs/Learn)  

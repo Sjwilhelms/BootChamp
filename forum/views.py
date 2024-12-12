@@ -167,7 +167,7 @@ def delete_post_view(request, slug):
 
 def profile_view(request, username):
     """
-    View a particular instance of a profile by username
+    View a particular instance of a profile by username, showing also posts and comments
     """
     user = get_object_or_404(User, username=username)
     profile = user.profile 
@@ -196,5 +196,5 @@ def edit_profile_view(request):
             messages.success(request, "Profile updated successfully!")
             return redirect('profile', username=request.user.username) 
     else:
-        form = ProfileForm(instance=profile)
+        form = ProfileForm(instance=profile) # populates form with current values
     return render(request, 'forum/edit_profile.html', {'form': form})

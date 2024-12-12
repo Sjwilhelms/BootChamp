@@ -94,6 +94,7 @@ class Profile(models.Model):
     profile_picture = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # this reciever creates a user profile with every user registration 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
@@ -103,8 +104,11 @@ class Profile(models.Model):
         return self.user.username
 
 
-def get_or_create_profile(user):
-    profile, created = Profile.objects.get_or_create(user=user)
+# Credit to claude AI and chat GPT for the following:
+
+def get_or_create_profile(user): # if the user does not have a profile, one is created
+    profile, created = Profile.objects.get_or_create(user=user) 
     return profile
 
-User.add_to_class('get_or_create_profile', get_or_create_profile)
+
+User.add_to_class('get_or_create_profile', get_or_create_profile) # adds get_or_create_profile(user) method to the User class/model 
