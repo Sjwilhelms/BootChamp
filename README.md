@@ -127,6 +127,14 @@ Set up accounts and billing with [HEROKU](https://www.heroku.com/)
 
 ### TESTING
 
+###### MANUAL TESTING
+
+The project has had a raft of manual testing from the developer and from other users. Each user story has been manually tested by users. You will see on BOOTCHAMP that test users have left content. 
+
+###### AUTOMATIC TESTING
+
+The next iteration of BOOTCHAMP will feature automatic testing.
+
 ###### VALIDATION
 
 HTML and CSS Validated with [W3Schools](https://validator.w3.org/). All views passed validation except 2 detailed below:  
@@ -152,13 +160,6 @@ Desktop:
 
 [JSLint](https://www.jslint.com/) was used to lint javascript. It failed on all counts due to not being able to access DOM variables. Manual testing was required. 
 
-###### MANUAL TESTING
-
-The project has had a raft of manual testing from the developer and from other users.
-
-###### AUTOMATIC TESTING
-
-The next iteration of BOOTCHAMP will feature automatic testing.
 
 ### REFERENCES
 
