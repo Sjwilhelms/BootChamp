@@ -1,5 +1,7 @@
 # BOOTCHAMP  
 
+![mockup](static/images/readme/Screenshot%202024-12-12%20005624.png)
+
 ###### THE TRIALS AND TRIBULATIONS OF JR SOFTWARE DEVELOPERS
 
 BOOTCHAMP is a forum for jr software developers to share projects, inspirational stories, cautionary tales, and candid advice. Though BOOTCHAMP reflects UX norms established by social media it takes more after blogs and forums. It took a three week sprint to establish scope, devise and prioritise user stories, and deliver the MVP.   
@@ -48,6 +50,8 @@ BOOTCHAMP was intended to share a layout with contemporary social media
 ![wireframes](static/images/readme/home(loggedOut).png)  
 
 ![mobile wireframes](static/images/readme/mobilePostView.png)    
+
+![](static/images/readme/)
 
 ###### MUST HAVE USER STORIES  
 
