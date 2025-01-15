@@ -168,19 +168,22 @@ Flake8 extension was used to lint python. All user generated Python passed pep8 
 
 ![Flake8](static/images/readme/flake8.png)  
 
-User stories were manually tested
+User stories were manually tested, including resolving a bug where user registration is successful but the page does not give the user feedback. I have added code where the user once registered is automatically logged in.  
+
 
 | User Stories | Tested | Works as intended |
 |---|---|---|
-|as a site user I can view a list of posts|[x] |[x] 
-|as a site user I can view each post in detail|[x] |[x] 
-|as a site user I can view the author of each posts profile|[x]|[x] 
-|as a site user I can register an account|[x] |[x] 
-|as a site user I can sign in to my account|[x] |[x] 
-|as a signed in site user I can create, edit, and/or delete a post|[x] |[x] 
-|as a signed in site user I can comment on a post and edit/delete said comment|[x] |[x] 
-|as a signed in site user I can update my profile|[x] |[x] 
-|as a signed in site user I can get feedback whenever I make a contribution|[x] |[x] 
+|as a site user I can view a list of posts| [x] | [x] |
+|as a site user I can view each post in detail| [x] | [x] |
+|as a site user I can view the author of each posts profile| [x] | [x] |
+|as a site user I can register an account| [x] | [x] |
+|as a site user I can sign in to my account| [x] | [x] |
+|as a signed in site user I can create, edit, and/or delete a post| [x] | [x] |
+|as a signed in site user I can comment on a post and edit/delete said comment|[x] | [x] |
+|as a signed in site user I can update my profile| [x] | [x] |
+|as a signed in site user I can get feedback whenever I make a contribution| [x] | [x] |
+
+
 
 ### REFERENCES
 
