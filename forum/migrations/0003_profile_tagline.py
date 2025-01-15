@@ -6,14 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('forum', '0002_profile'),
+        ("forum", "0002_profile"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='profile',
-            name='tagline',
-            field=models.CharField(default='Tagling', max_length=200, unique=True),
+            model_name="profile",
+            name="tagline",
+            field=models.CharField(default="Tagling", max_length=200, unique=True),
             preserve_default=False,
         ),
     ]

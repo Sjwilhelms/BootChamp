@@ -63,10 +63,12 @@ You can visit the [Project board](https://github.com/users/Sjwilhelms/projects/6
   
 Manually tested and passed
 
+
 1. as a site user I can view a list of posts so that I can survey the sites content at a glance
 1. as a site user I can view each post in detail so that I can engage with the content
 1. as a site user I can view the author of each posts profile so that I can see more about them, including their post and commments
 1. as a site user I can register an account so that I can have my own profile and contribute to the forum 
+1. as a site user I can sign in to my account and can contribute to the forums content
 1. as a signed in site user I can create, edit, and/or delete a post so that I can contribute to the forum
 1. as a signed in site user I can comment on a post and edit/delete said comment so that I can interact with other users
 1. as a signed in site user I can update my profile biography
@@ -160,6 +162,25 @@ Desktop:
 
 [JSLint](https://www.jslint.com/) was used to lint javascript. It failed on all counts due to not being able to access DOM variables. Manual testing was required. 
 
+ RESUBMISSION
+
+Flake8 extension was used to lint python. All user generated Python passed pep8 linting except for one variable in settings.py which is used in an 'if' statement.
+
+![Flake8](static/images/readme/flake8.png)  
+
+User stories were manually tested
+
+| User Stories | Tested | Works as intended |
+|---|---|---|
+|as a site user I can view a list of posts|[x] |[x] 
+|as a site user I can view each post in detail|[x] |[x] 
+|as a site user I can view the author of each posts profile|[x]|[x] 
+|as a site user I can register an account|[x] |[x] 
+|as a site user I can sign in to my account|[x] |[x] 
+|as a signed in site user I can create, edit, and/or delete a post|[x] |[x] 
+|as a signed in site user I can comment on a post and edit/delete said comment|[x] |[x] 
+|as a signed in site user I can update my profile|[x] |[x] 
+|as a signed in site user I can get feedback whenever I make a contribution|[x] |[x] 
 
 ### REFERENCES
 
