@@ -173,15 +173,15 @@ User stories were manually tested, including resolving a bug where user registra
 
 | User Stories | Tested | Works as intended |
 |---|---|---|
-|as a site user I can view a list of posts| [x] | [x] |
-|as a site user I can view each post in detail| [x] | [x] |
-|as a site user I can view the author of each posts profile| [x] | [x] |
-|as a site user I can register an account| [x] | [x] |
-|as a site user I can sign in to my account| [x] | [x] |
-|as a signed in site user I can create, edit, and/or delete a post| [x] | [x] |
-|as a signed in site user I can comment on a post and edit/delete said comment|[x] | [x] |
-|as a signed in site user I can update my profile| [x] | [x] |
-|as a signed in site user I can get feedback whenever I make a contribution| [x] | [x] |
+|as a site user I can view a list of posts| ✅ | ✅ |
+|as a site user I can view each post in detail| ✅ | ✅ |
+|as a site user I can view the author of each posts profile| ✅ | ✅ |
+|as a site user I can register an account| ✅ | ✅ |
+|as a site user I can sign in to my account| ✅ | ✅ |
+|as a signed in site user I can create, edit, and/or delete a post| ✅ | ✅ |
+|as a signed in site user I can comment on a post and edit/delete said comment|✅ | ✅ |
+|as a signed in site user I can update my profile| ✅ | ✅ |
+|as a signed in site user I can get feedback whenever I make a contribution| ✅ | ✅ |
 
 # END OF RESUBMISSION
 
