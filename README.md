@@ -162,7 +162,7 @@ Desktop:
 
 [JSLint](https://www.jslint.com/) was used to lint javascript. It failed on all counts due to not being able to access DOM variables. Manual testing was required. 
 
-RESUBMISSION
+# RESUBMISSION
 
 Flake8 extension was used to lint python. All user generated Python passed pep8 linting except for one variable in settings.py which is used in an 'if' statement.
 
